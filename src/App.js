@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 
+const mockData = {};
+
 const formatCatName = (name) => {
   return name
     .split("_")
@@ -44,20 +46,28 @@ const Cat = () => {
   const formattedCatName = formatCatName(catName);
   return (
     <div>
-      <h1>{formattedCatName}</h1>
       <div class="main-container">
+        <h1>{formattedCatName}</h1>
         <hr />
         <div class="info-container">
           <div class="left-container">
-            <h2 class="no-mgn-top s-mgn-bottom about-title">About Sophie</h2>
+            <h2 class="no-mgn-top s-mgn-bottom about-title">
+              About {formattedCatName}
+              <p className="date-sentence">
+                {formattedCatName} was born on DATE_HERE
+              </p>
+              <p className="sm-v-mgn">DESCRIPTION_HERE</p>
+            </h2>
           </div>
           <div class="right-container">
-            <div class="image-container"></div>
+            <div class="image-container">
+              <img src={`images/${catName}.jpg`} alt={formattedCatName} />
+            </div>
           </div>
         </div>
         <hr />
         <div class="album-container">
-          <h2 class="no-mgn-top width-100">Sophie's Albums</h2>
+          <h2 class="no-mgn-top width-100">{formattedCatName}'s Albums</h2>
           <div class="albums"></div>
         </div>
       </div>
