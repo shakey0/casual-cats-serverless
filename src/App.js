@@ -45,10 +45,22 @@ const Cat = () => {
   return (
     <div>
       <h1>{formattedCatName}</h1>
-      <p>
-        This is the page for {formattedCatName}. Here you can add specific
-        information about this cat.
-      </p>
+      <div class="main-container">
+        <hr />
+        <div class="info-container">
+          <div class="left-container">
+            <h2 class="no-mgn-top s-mgn-bottom about-title">About Sophie</h2>
+          </div>
+          <div class="right-container">
+            <div class="image-container"></div>
+          </div>
+        </div>
+        <hr />
+        <div class="album-container">
+          <h2 class="no-mgn-top width-100">Sophie's Albums</h2>
+          <div class="albums"></div>
+        </div>
+      </div>
     </div>
   );
 };
