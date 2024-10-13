@@ -24,7 +24,7 @@ const Home = () => {
       <div className="home-cats">
         {cats.map((cat) => (
           <div key={cat}>
-            <Link to={`/cat/${cat}`} className="home-cat">
+            <Link to={`/${cat}`} className="home-cat">
               {formatCatName(cat)}
             </Link>
           </div>
@@ -88,7 +88,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cat/:catName" element={<Cat />} />
+          <Route path="/:catName" element={<Cat />} />
         </Routes>
       </div>
     </Router>
